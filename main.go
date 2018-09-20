@@ -277,7 +277,8 @@ func reverseCapture() (err error) {
 	bSensors, _ := json.MarshalIndent(payload, "", " ")
 	log.Debug(string(bSensors))
 
-	err = postData(payload, "/passive")
+	err = postData(payload, "/v1/sensordata/add")
+	//err = postData(payload, "/passive")
 	return
 }
 
@@ -366,7 +367,8 @@ func basicCapture() (err error) {
 	}
 
 	log.Debug(string(bPayload))
-	err = postData(payload, "/data")
+	//err = postData(payload, "/data")
+	err = postData(payload, "/v1/sensordata/add")
 	return
 }
 
